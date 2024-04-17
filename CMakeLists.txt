@@ -12,5 +12,10 @@ if(NOT glfw3_FOUND)
     message(FATAL_ERROR "GLFW3 not found")
 endif()
 
+find_package(glm REQUIRED)
+if (NOT glm_FOUND)
+    message(FATAL_ERROR "GLM not found")
+endif()
+
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 target_link_libraries(${PROJECT_NAME} glfw)
